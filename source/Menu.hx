@@ -18,6 +18,8 @@ using StringTools;
 
 class Menu extends FlxSubState
 {
+	public static inline final FILE_EXT:String = #if web ".mp3" #else ".ogg" #end;
+
 	var pressTxt:FlxText;
 	var changelogTxt:FlxText;
 	var exitChangelog:FlxText;
@@ -27,6 +29,8 @@ class Menu extends FlxSubState
 	var changelogGrp:FlxSpriteGroup;
 
 	var viewingChangelog:Bool = false;
+
+	var highscore:FlxText;
 
 	var pressed:Bool = false;
 
@@ -53,8 +57,8 @@ class Menu extends FlxSubState
 		changelogTxt = new FlxText("CHANGELOG", 24);
 		changelogTxt.setFormat(FlxAssets.FONT_DEFAULT, 24, FlxColor.YELLOW, OUTLINE, FlxColor.ORANGE);
 		changelogTxt.alpha = 0.6;
-		changelogTxt.x = FlxG.width - changelogTxt.width - 25;
-		changelogTxt.y = 50;
+		changelogTxt.x = 50;
+		changelogTxt.y = pressTxt.y + pressTxt.height;
 		add(changelogTxt);
 
 		var title:FlxText = new FlxText("Chameleon, Flies and Rhythm", 20);
@@ -63,7 +67,7 @@ class Menu extends FlxSubState
 		title.y = 50;
 		add(title);
 
-		var highscore:FlxText = new FlxText('Highscore: ${FlxG.save.data.highscore}pts', 20);
+		highscore = new FlxText('Highscore: ${FlxG.save.data.highscore}pts (press R to reset highscore)', 20);
 		highscore.setFormat(FlxAssets.FONT_DEFAULT, 20, FlxColor.WHITE, OUTLINE, FlxColor.BLACK);
 		highscore.x = 50;
 		highscore.y = title.height + title.y;
@@ -94,7 +98,7 @@ class Menu extends FlxSubState
 		changelogGrp = new FlxSpriteGroup();
 		add(changelogGrp);
 
-		changelogBG = new FlxSprite().makeGraphic(350, 400, FlxColor.BLACK);
+		changelogBG = new FlxSprite().makeGraphic(495, 400, FlxColor.BLACK);
 		changelogBG.screenCenter();
 		changelogGrp.add(changelogBG);
 
@@ -215,5 +219,11 @@ class Menu extends FlxSubState
 
 		if (FlxG.keys.justPressed.ENTER && !pressed)
 			goToPlay();
+
+		if (FlxG.keys.justPressed.R && !pressed)
+		{
+			FlxG.save.data.highscore = 0;
+			highscore.text = 'Highscore: ${FlxG.save.data.highscore}pts (press R to reset highscore)';
+		}
 	}
 }

@@ -39,6 +39,11 @@
 	<source path="source" />
 	<assets path="assets" />
 
+	<assets path="assets/music" include="*.mp3" if="web" />
+	<assets path="assets/music" include="*.ogg" unless="web" />
+	<assets path="assets/sounds" include="*.mp3" if="web" />
+	<assets path="assets/sounds" include="*.ogg" unless="web" />
+
 	<!-- _______________________________ Libraries ______________________________ -->
 
 	<haxelib name="flixel" />

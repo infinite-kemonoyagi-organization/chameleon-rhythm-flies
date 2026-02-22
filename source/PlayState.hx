@@ -15,6 +15,8 @@ import openfl.Lib;
 
 class PlayState extends FlxState
 {
+	public static var instance:PlayState;
+
 	private var chameleon:Chameleon;
 	private var tongue:Tongue;
 
@@ -35,8 +37,12 @@ class PlayState extends FlxState
 
 	override public function create()
 	{
+		instance = this;
+
 		if (started)
 			openSubState(new Menu());
+		else
+			FlxG.sound.playMusic("assets/music/Camaleon" + Menu.FILE_EXT);
 
 		FlxG.camera.bgColor = 0xFFFFFFFF;
 
@@ -81,7 +87,7 @@ class PlayState extends FlxState
 	{
 		super.closeSubState();
 
-		FlxG.sound.playMusic("assets/music/Camaleon.mp3");
+		FlxG.sound.playMusic("assets/music/Camaleon" + Menu.FILE_EXT);
 		started = false;
 	}
 
@@ -163,7 +169,7 @@ class PlayState extends FlxState
 							chameleon.offset.x -= 1;
 							chameleon.offset.y += 2;
 
-							FlxG.sound.play("assets/sounds/attack.mp3");
+							FlxG.sound.play("assets/sounds/attack" + Menu.FILE_EXT);
 
 							//
 							var rating:FlxText = new FlxText("+100");
@@ -181,6 +187,8 @@ class PlayState extends FlxState
 							});
 
 							score += 100;
+							if (score > FlxG.save.data.highscore)
+								FlxG.save.data.highscore = score;
 						}
 					}
 				}
@@ -211,6 +219,9 @@ class PlayState extends FlxState
 
 		if (tongue.animation.finished)
 			tongue.visible = false;
+
+		if (FlxG.keys.justPressed.R)
+			openSubState(new Retry(score));
 	}
 
 	public function whenFlyKilled(fly:Fly):Void
