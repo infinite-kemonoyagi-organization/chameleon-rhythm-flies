@@ -1,0 +1,15 @@
+1.0.1 (February 27, 2026) | Bugfix Update:
+ -- Added
+ - Add the changelog list in the Menu.
+ - Port the game to Windows and Linux (a bit unnecessary at the moment but well xd)
+
+ -- Changed
+ - Change my old name for the new one.
+ - Change the window's title for "ludum-dare-jam-57" to "Chameleon, Flies and Rhythm".
+ - Change the file name for "ludum-dare-jam-57" to "chameleon-rhythm".
+
+ -- Fixed:
+ - Fix spelling mistake in the title.
+
+1.0.0 (Oct 6, 2024) | Ludum dare Jam 56:
+ - Ludum dare jam #56 release.
