@@ -1,6 +1,6 @@
 # Chameleon, Flies and Rhytmn
 
-This game is like pyoro minigames but playing as a chameleon.
+This game, made for the Ludum dare Jam #56, is like pyoro minigames but playing as a chameleon.
 
 Eat all the flies you can
 
