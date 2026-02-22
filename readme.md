@@ -12,7 +12,7 @@ Eat all the flies you can
 
 ## Public Beta
 
-Play the beta of the game on newgrounds [(here link)](https://www.newgrounds.com/portal/view/950974).
+Play the beta of the game on newgrounds <https://www.newgrounds.com/portal/view/950974>.
 
 maybe i will update this game adding new content, but for the moment i will only fix some stuff ;3
 
