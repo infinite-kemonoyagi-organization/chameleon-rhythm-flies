@@ -1,0 +1,33 @@
+{
+	"search.exclude": {
+		"builds/**/*.*": true
+	},
+	"files.associations": {
+		"*.hxp": "haxe"
+	},
+	"[haxe]": {
+		"editor.formatOnSave": true,
+		"editor.formatOnPaste": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": "never"
+		},
+		"editor.defaultFormatter": "nadako.vshaxe",
+		"editor.tabSize": 3,
+	},
+	"editor.tabSize": 2,
+	"haxe.enableExtendedIndentation": true,
+
+	"projectManager.git.baseFolders": ["./"],
+
+	"haxecheckstyle.sourceFolders": ["source"],
+	"haxecheckstyle.externalSourceRoots": [],
+
+	"files.eol": "\n",
+
+	"haxe.displayPort": "auto",
+	"haxe.enableCompilationServer": true,
+	"haxe.enableServerView": true,
+	"haxe.displayServer": {
+		"arguments": ["-v"]
+	},
+}
