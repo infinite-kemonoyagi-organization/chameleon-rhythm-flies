@@ -34,13 +34,13 @@ class Menu extends FlxSubState
 		pressTxt.y = FlxG.height - pressTxt.height - 50;
 		add(pressTxt);
 
-		var title:FlxText = new FlxText("Chameleon, Rhytm and... Flies", 20);
+		var title:FlxText = new FlxText("Chameleon, Flies and Rhythm", 20);
 		title.setFormat(FlxAssets.FONT_DEFAULT, 20, FlxColor.WHITE, OUTLINE, FlxColor.BLACK);
 		title.x = 50;
 		title.y = 50;
 		add(title);
 
-		var credits:FlxText = new FlxText("Creator: InfiDoggy \nAnimator & Menu music: FishDev \nMusician: EliAnima", 16);
+		var credits:FlxText = new FlxText("Creator: Infinite Kemonoyagi \nAnimator & Menu music: FishDev \nMusician: EliAnima", 16);
 		credits.setFormat(FlxAssets.FONT_DEFAULT, 16, FlxColor.WHITE, OUTLINE, FlxColor.BLACK);
 		credits.x = FlxG.width - credits.width - 50;
 		credits.y = FlxG.height - credits.height - 50;
